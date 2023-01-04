@@ -18,17 +18,17 @@ export default function Home({ results }) {
           max-width: 480px;
           margin: 0 auto;
           display: flex;
-          justify-content: space-evenly;
+          justify-content: space-between;
           box-sizing: border-box;
           flex-wrap: wrap;
         }
         .container {
           position: relative;
-          width: 230px;
-          height: 420px;
+          width: 235px;
+          height: 450px;
           margin-bottom: 10px;
-          background-color: #def5e58d;
-          box-shadow: 2px 2px 4px #8ec3b0;
+          background-color: #ededed78;
+          box-shadow: 2px 2px 5px #7d7d7dab;
           border-radius: 20px;
           padding: 20px 10px;
           box-sizing: border-box;
@@ -38,7 +38,7 @@ export default function Home({ results }) {
           align-items: center;
         }
         .container:hover {
-          background-color: #def5e5;
+          background-color: #ededed;
         }
         .container img {
           width: 100%;
@@ -46,11 +46,13 @@ export default function Home({ results }) {
         }
         .container h4 {
           margin: 10px 0 0 0;
+          font-family: fantasy;
         }
         .container p {
           position: absolute;
           bottom: 5px;
           margin: 0;
+          font-family: sans-serif;
         }
       `}</style>
     </div>
