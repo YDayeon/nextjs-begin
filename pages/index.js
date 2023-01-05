@@ -1,14 +1,35 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Seo from '../components/Seo';
 
 export default function Home({ results }) {
+  const router = useRouter();
+  const onClick = (id, title) => {
+    router.push(
+      {
+        pathname: `/movies/${id}`,
+        query: {
+          id: id,
+          title: title,
+        },
+      },
+      `/movies/${id}`
+    );
+  };
   return (
     <div>
       <Seo title='Home' />
       <article>
         {results?.map((movie) => (
-          <div key={movie.id} className='container'>
+          <div
+            onClick={() => onClick(movie.id, movie.original_title)}
+            className='container'
+            key={movie.id}
+          >
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
-            <h4>{movie.original_title}</h4>
+            <Link href={`/movies/${movie.id}`}>
+              <h4>{movie.original_title}</h4>
+            </Link>
             <p>⭐️ {movie.vote_average}</p>
           </div>
         ))}
@@ -29,7 +50,6 @@ export default function Home({ results }) {
           margin-bottom: 10px;
           background-color: #ededed78;
           box-shadow: 2px 2px 5px #7d7d7dab;
-          border-radius: 20px;
           padding: 20px 10px;
           box-sizing: border-box;
           text-align: center;
@@ -38,6 +58,7 @@ export default function Home({ results }) {
           align-items: center;
         }
         .container:hover {
+          scale: 1.05;
           background-color: #ededed;
         }
         .container img {

@@ -26,11 +26,9 @@ export default function NavBar() {
           box-sizing: border-box;
         }
         span {
-          color: white;
         }
         nav > :global(a) {
           text-decoration: none;
-          color: white;
           font-family: sans-serif;
         }
         nav > :global(a.active) {

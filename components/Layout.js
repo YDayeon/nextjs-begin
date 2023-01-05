@@ -11,7 +11,7 @@ export default function Layout({ children }) {
           top: 0;
           left: 0;
           width: 100%;
-          background: #222222;
+          background: white;
         }
       `}</style>
     </div>
